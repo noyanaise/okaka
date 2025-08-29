@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mwa</title>
+  <script type="text/javascript">
+   alert("Hello Hanie!")
+   alert("I hope you're doing well")
+   alert("Here's a little something I made for you!")
+   alert("I hope you'll like it!")
+   </script>
+   <style>
+    body {
+      display: flex;
+      background-color: pink;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      flex-direction: column; 
+    }
+    button {
+      padding: 15px 30px;
+      font-size: 18px;
+      background-color: aqua;
+      cursor: pointer;
+      margin-bottom: 20px;
+    }
+    .images {
+      display: flex; 
+      justify-content: center;
+      gap: 15px; 
+    }
+    .images img {
+      display: none; 
+      max-width: 200px;
+      border-radius: 10px;
+      opacity: 0;
+      transform: translateY(50px); 
+      transition: all 0.6s ease;
+    }
+    .images img.show {
+      display: block;
+      opacity: 1;
+      transform: translateY(0); 
+    }
+  </style>
+</head>
+<body>
+  <button id="myButton" onclick="showImages()">Click Me</button>
+  
+  <div class="images">
+    <img src="a.jpg" alt="Picture 1">
+    <img src="b.jpg" alt="Picture 2">
+    <img src="c.jpg" alt="Picture 3">
+    <img src="d.jpg" alt="Picture 4">
+    <img src="e.jpg" alt="Picture 5">
+
+  </div>
+
+  <script>
+    function showImages() {
+      let pics = document.querySelectorAll(".images img");
+      let button = document.getElementById("myButton");
+      
+   
+      button.style.display = "none";
+      
+   
+      pics.forEach((pic, index) => {
+        setTimeout(() => {
+          pic.classList.add("show");
+        }, index * 800); 
+      });
+    }
+  </script>
+</body>
+</html>
